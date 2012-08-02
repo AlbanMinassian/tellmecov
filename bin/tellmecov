@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+// ----------------------------------------------------------------------------------------------------------------------
+// modules
+// ----------------------------------------------------------------------------------------------------------------------
+var tellmecov = require('../lib/tellmecov');
+var commander = require('commander');
+var mkdirp = require('mkdirp');
+var os = require('os');
+var fs = require('fs');
+var pkg = require('../package.json');
+
+// ----------------------------------------------------------------------------------------------------------------------
+// commander
+// ----------------------------------------------------------------------------------------------------------------------
+commander
+  .version(pkg.version)
+  .usage('[options] <json coverage file ... >')
+  .option('-r, --globalrank', 'print global rank')
+  .option('-b, --globalbadge <output>', 'write badge png to file <output> ')
+;
+  
+commander.on('--help', function(){
+  console.log('  Examples:');
+  console.log('');
+  console.log('    $ tellmecov --help');
+  console.log('    $ tellmecov --version');
+  console.log('    $ tellmecov --globalrank "/path/to/read/coverage.json"');
+  console.log('    $ tellmecov --globalbadge "/path/to/write/coverage.png" "/path/to/read/coverage.json"');
+  console.log('');
+});  
+
+commander.parse(process.argv);
+
+// ----------------------------------------------------------------------------------------------------------------------
+// tellmecov
+// ----------------------------------------------------------------------------------------------------------------------
+try {
+    stats = fs.lstatSync(commander.args[0]); // nodejs 0.6 compat
+    var tellmecov = new tellmecov();
+    tellmecov.readCoverageJson(commander.args[0]);
+    if (commander.globalrank) { 
+        console.log(tellmecov.getGlobalCoverageValue());   
+    }
+    if (commander.globalbadge) { 
+        tellmecov.getGlobalCoverageBadge(commander.globalbadge);   
+    }
+}
+catch (e) {
+    console.log(e);
+}

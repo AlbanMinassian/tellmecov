@@ -1,0 +1,11 @@
+.git*
+lib-cov/
+docs/
+examples/
+support/
+test/
+testing.js
+coverage.html
+coverage.json
+.travis.yml
+*SciTE.properties

@@ -1,0 +1,32 @@
+{
+  "author": "ami44",
+  "name": "tellmecov",
+  "description": "tell me coverage rank",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ami44/tellmecov",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ami44/tellmecov.git"
+  },
+    "bugs" : {
+        "url" : "https://github.com/ami44/tellmecov/issues"
+    },
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "gm": "",
+    "commander": "",
+    "mkdirp": ""
+  },
+    "devDependencies": {
+        "mocha": "",
+        "should": "",  
+        "underscore": ""  
+    },
+  "optionalDependencies": {},
+  "bin": { "tellmecov": "./bin/tellmecov" }
+}

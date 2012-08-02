@@ -1,0 +1,520 @@
+{
+  "instrumentation": "node-jscoverage",
+  "sloc": 50,
+  "hits": 50,
+  "misses": 0,
+  "coverage": 100,
+  "files": [
+    {
+      "filename": "jstk-view-paginate-tbpager.js",
+      "coverage": 100,
+      "hits": 50,
+      "misses": 0,
+      "sloc": 50,
+      "source": {
+        "1": {
+          "source": "// -*- coding: utf-8 -*-",
+          "coverage": ""
+        },
+        "2": {
+          "source": "",
+          "coverage": ""
+        },
+        "3": {
+          "source": "function jstkViewPaginateTbpager(argOpts) {",
+          "coverage": 1
+        },
+        "4": {
+          "source": "    ",
+          "coverage": ""
+        },
+        "5": {
+          "source": "    // --------------------------------------------------------------------------------------------------------",
+          "coverage": ""
+        },
+        "6": {
+          "source": "    // only undefined or json arg",
+          "coverage": ""
+        },
+        "7": {
+          "source": "    // --------------------------------------------------------------------------------------------------------",
+          "coverage": ""
+        },
+        "8": {
+          "source": "    if ( argOpts !== undefined ) { ",
+          "coverage": 14
+        },
+        "9": {
+          "source": "        if ( typeof(argOpts) !== 'object' ) { ",
+          "coverage": 13
+        },
+        "10": {
+          "source": "            argOpts = undefined; ",
+          "coverage": 2
+        },
+        "11": {
+          "source": "        }",
+          "coverage": ""
+        },
+        "12": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "13": {
+          "source": "    ",
+          "coverage": ""
+        },
+        "14": {
+          "source": "    // --------------------------------------------------------------------------------------------------------",
+          "coverage": ""
+        },
+        "15": {
+          "source": "    // options",
+          "coverage": ""
+        },
+        "16": {
+          "source": "    // --------------------------------------------------------------------------------------------------------",
+          "coverage": ""
+        },
+        "17": {
+          "source": "    var opts = argOpts || {}; // if undefined then empty json else json",
+          "coverage": 14
+        },
+        "18": {
+          "source": "    ",
+          "coverage": ""
+        },
+        "19": {
+          "source": "    // previous default value",
+          "coverage": ""
+        },
+        "20": {
+          "source": "    opts.previous = 'previous' in opts ? opts.previous : {};",
+          "coverage": 14
+        },
+        "21": {
+          "source": "    opts.previous.text = 'text' in opts.previous ? opts.previous.text : 'Previous';",
+          "coverage": 14
+        },
+        "22": {
+          "source": "    opts.previous.url = 'url' in opts.previous ? opts.previous.url : '#';",
+          "coverage": 14
+        },
+        "23": {
+          "source": "    opts.previous.enable = 'enable' in opts.previous ? Boolean(opts.previous.enable) : true;",
+          "coverage": 14
+        },
+        "24": {
+          "source": "    opts.previous.align = 'align' in opts.previous ? opts.previous.align : 'center';",
+          "coverage": 14
+        },
+        "25": {
+          "source": "        ",
+          "coverage": ""
+        },
+        "26": {
+          "source": "    // next default value        ",
+          "coverage": ""
+        },
+        "27": {
+          "source": "    opts.next = 'next' in opts ? opts.next : {};",
+          "coverage": 14
+        },
+        "28": {
+          "source": "    opts.next.text = 'text' in opts.next ? opts.next.text : 'Next';",
+          "coverage": 14
+        },
+        "29": {
+          "source": "    opts.next.url = 'url' in opts.next ? opts.next.url : '#';",
+          "coverage": 14
+        },
+        "30": {
+          "source": "    opts.next.enable = 'enable' in opts.next ? Boolean(opts.next.enable) : true;",
+          "coverage": 14
+        },
+        "31": {
+          "source": "    opts.next.align = 'align' in opts.next ? opts.next.align : 'center';",
+          "coverage": 14
+        },
+        "32": {
+          "source": "",
+          "coverage": ""
+        },
+        "33": {
+          "source": "    // --------------------------------------------------------------------------------------------------------",
+          "coverage": ""
+        },
+        "34": {
+          "source": "    // class",
+          "coverage": ""
+        },
+        "35": {
+          "source": "    // --------------------------------------------------------------------------------------------------------",
+          "coverage": ""
+        },
+        "36": {
+          "source": "    var previousClass = [];",
+          "coverage": 14
+        },
+        "37": {
+          "source": "    if (opts.previous.align === 'left') { previousClass.push('previous'); }",
+          "coverage": 15
+        },
+        "38": {
+          "source": "    // else if (opts.previous.align === 'center') { /*pass*/ }",
+          "coverage": ""
+        },
+        "39": {
+          "source": "    if (opts.previous.enable === false) { previousClass.push('disabled'); }    ",
+          "coverage": 15
+        },
+        "40": {
+          "source": "        ",
+          "coverage": ""
+        },
+        "41": {
+          "source": "    var nextClass = [];",
+          "coverage": 14
+        },
+        "42": {
+          "source": "    if (opts.next.align === 'right') { nextClass.push('next'); }",
+          "coverage": 15
+        },
+        "43": {
+          "source": "    // else if (opts.next.align === 'center') { /*pass*/ }",
+          "coverage": ""
+        },
+        "44": {
+          "source": "    if (opts.next.enable === false) { nextClass.push('disabled'); }    ",
+          "coverage": 15
+        },
+        "45": {
+          "source": "        ",
+          "coverage": ""
+        },
+        "46": {
+          "source": "    // --------------------------------------------------------------------------------------------------------",
+          "coverage": ""
+        },
+        "47": {
+          "source": "    // html",
+          "coverage": ""
+        },
+        "48": {
+          "source": "    // --------------------------------------------------------------------------------------------------------",
+          "coverage": ""
+        },
+        "49": {
+          "source": "    var html = [];",
+          "coverage": 14
+        },
+        "50": {
+          "source": "    html.push('&lt;ul class=\"pager\"&gt;');",
+          "coverage": 14
+        },
+        "51": {
+          "source": "    html.push('&lt;li');",
+          "coverage": 14
+        },
+        "52": {
+          "source": "    if ( previousClass.length &gt; 0 ) { ",
+          "coverage": 14
+        },
+        "53": {
+          "source": "        html.push(' class=\"');",
+          "coverage": 2
+        },
+        "54": {
+          "source": "        html.push(previousClass.join(' ')); ",
+          "coverage": 2
+        },
+        "55": {
+          "source": "        html.push('\"'); ",
+          "coverage": 2
+        },
+        "56": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "57": {
+          "source": "    html.push('&gt;');",
+          "coverage": 14
+        },
+        "58": {
+          "source": "    html.push('&lt;a href=\"');",
+          "coverage": 14
+        },
+        "59": {
+          "source": "    html.push(opts.previous.url);",
+          "coverage": 14
+        },
+        "60": {
+          "source": "    html.push('\"&gt;');",
+          "coverage": 14
+        },
+        "61": {
+          "source": "    html.push(opts.previous.text);",
+          "coverage": 14
+        },
+        "62": {
+          "source": "    html.push('&lt;/a&gt;');",
+          "coverage": 14
+        },
+        "63": {
+          "source": "    html.push('&lt;/li&gt;');",
+          "coverage": 14
+        },
+        "64": {
+          "source": "    html.push('&lt;li');",
+          "coverage": 14
+        },
+        "65": {
+          "source": "    if ( nextClass.length &gt; 0 ) { ",
+          "coverage": 14
+        },
+        "66": {
+          "source": "        html.push(' class=\"');",
+          "coverage": 2
+        },
+        "67": {
+          "source": "        html.push(nextClass.join(' ')); ",
+          "coverage": 2
+        },
+        "68": {
+          "source": "        html.push('\"'); ",
+          "coverage": 2
+        },
+        "69": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "70": {
+          "source": "    html.push('&gt;');",
+          "coverage": 14
+        },
+        "71": {
+          "source": "    html.push('&lt;a href=\"');",
+          "coverage": 14
+        },
+        "72": {
+          "source": "    html.push(opts.next.url);",
+          "coverage": 14
+        },
+        "73": {
+          "source": "    html.push('\"&gt;');",
+          "coverage": 14
+        },
+        "74": {
+          "source": "    html.push(opts.next.text);",
+          "coverage": 14
+        },
+        "75": {
+          "source": "    html.push('&lt;/a&gt;');",
+          "coverage": 14
+        },
+        "76": {
+          "source": "    html.push('&lt;/li&gt;');",
+          "coverage": 14
+        },
+        "77": {
+          "source": "    html.push('&lt;/ul&gt;');",
+          "coverage": 14
+        },
+        "78": {
+          "source": "        ",
+          "coverage": ""
+        },
+        "79": {
+          "source": "    // --------------------------------------------------------------------------------------------------------",
+          "coverage": ""
+        },
+        "80": {
+          "source": "    // return",
+          "coverage": ""
+        },
+        "81": {
+          "source": "    // --------------------------------------------------------------------------------------------------------",
+          "coverage": ""
+        },
+        "82": {
+          "source": "    return html.join('');",
+          "coverage": 14
+        },
+        "83": {
+          "source": "",
+          "coverage": ""
+        },
+        "84": {
+          "source": "}",
+          "coverage": ""
+        },
+        "85": {
+          "source": "",
+          "coverage": ""
+        },
+        "86": {
+          "source": "module.exports = jstkViewPaginateTbpager;",
+          "coverage": 1
+        },
+        "87": {
+          "source": "",
+          "coverage": ""
+        }
+      }
+    }
+  ],
+  "stats": {
+    "suites": 1,
+    "tests": 14,
+    "passes": 14,
+    "failures": 0,
+    "start": "2012-07-30T12:50:47.567Z",
+    "end": "2012-07-30T12:50:47.571Z",
+    "duration": 4
+  },
+  "tests": [
+    {
+      "title": "without option",
+      "fullTitle": "jstk-view-paginate-tbpager without option",
+      "duration": 1
+    },
+    {
+      "title": "with option string option",
+      "fullTitle": "jstk-view-paginate-tbpager with option string option",
+      "duration": 0
+    },
+    {
+      "title": "with option string option",
+      "fullTitle": "jstk-view-paginate-tbpager with option string option",
+      "duration": 0
+    },
+    {
+      "title": "with option empty json option ",
+      "fullTitle": "jstk-view-paginate-tbpager with option empty json option ",
+      "duration": 1
+    },
+    {
+      "title": "with option previous.text",
+      "fullTitle": "jstk-view-paginate-tbpager with option previous.text",
+      "duration": 0
+    },
+    {
+      "title": "with option previous.url",
+      "fullTitle": "jstk-view-paginate-tbpager with option previous.url",
+      "duration": 0
+    },
+    {
+      "title": "with option previous.enable",
+      "fullTitle": "jstk-view-paginate-tbpager with option previous.enable",
+      "duration": 0
+    },
+    {
+      "title": "with option previous.align",
+      "fullTitle": "jstk-view-paginate-tbpager with option previous.align",
+      "duration": 0
+    },
+    {
+      "title": "with option previous.align",
+      "fullTitle": "jstk-view-paginate-tbpager with option previous.align",
+      "duration": 0
+    },
+    {
+      "title": "with option next.text",
+      "fullTitle": "jstk-view-paginate-tbpager with option next.text",
+      "duration": 0
+    },
+    {
+      "title": "with option next.url",
+      "fullTitle": "jstk-view-paginate-tbpager with option next.url",
+      "duration": 0
+    },
+    {
+      "title": "with option next.enable",
+      "fullTitle": "jstk-view-paginate-tbpager with option next.enable",
+      "duration": 0
+    },
+    {
+      "title": "with option next.align",
+      "fullTitle": "jstk-view-paginate-tbpager with option next.align",
+      "duration": 0
+    },
+    {
+      "title": "with option next.align",
+      "fullTitle": "jstk-view-paginate-tbpager with option next.align",
+      "duration": 0
+    }
+  ],
+  "failures": [],
+  "passes": [
+    {
+      "title": "without option",
+      "fullTitle": "jstk-view-paginate-tbpager without option",
+      "duration": 1
+    },
+    {
+      "title": "with option string option",
+      "fullTitle": "jstk-view-paginate-tbpager with option string option",
+      "duration": 0
+    },
+    {
+      "title": "with option string option",
+      "fullTitle": "jstk-view-paginate-tbpager with option string option",
+      "duration": 0
+    },
+    {
+      "title": "with option empty json option ",
+      "fullTitle": "jstk-view-paginate-tbpager with option empty json option ",
+      "duration": 1
+    },
+    {
+      "title": "with option previous.text",
+      "fullTitle": "jstk-view-paginate-tbpager with option previous.text",
+      "duration": 0
+    },
+    {
+      "title": "with option previous.url",
+      "fullTitle": "jstk-view-paginate-tbpager with option previous.url",
+      "duration": 0
+    },
+    {
+      "title": "with option previous.enable",
+      "fullTitle": "jstk-view-paginate-tbpager with option previous.enable",
+      "duration": 0
+    },
+    {
+      "title": "with option previous.align",
+      "fullTitle": "jstk-view-paginate-tbpager with option previous.align",
+      "duration": 0
+    },
+    {
+      "title": "with option previous.align",
+      "fullTitle": "jstk-view-paginate-tbpager with option previous.align",
+      "duration": 0
+    },
+    {
+      "title": "with option next.text",
+      "fullTitle": "jstk-view-paginate-tbpager with option next.text",
+      "duration": 0
+    },
+    {
+      "title": "with option next.url",
+      "fullTitle": "jstk-view-paginate-tbpager with option next.url",
+      "duration": 0
+    },
+    {
+      "title": "with option next.enable",
+      "fullTitle": "jstk-view-paginate-tbpager with option next.enable",
+      "duration": 0
+    },
+    {
+      "title": "with option next.align",
+      "fullTitle": "jstk-view-paginate-tbpager with option next.align",
+      "duration": 0
+    },
+    {
+      "title": "with option next.align",
+      "fullTitle": "jstk-view-paginate-tbpager with option next.align",
+      "duration": 0
+    }
+  ]
+}
