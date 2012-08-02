@@ -173,7 +173,7 @@
           "coverage": 0
         },
         "41": {
-          "source": "    gm(imgSource).fill('white').drawText(63, 10, ''+ceil(this.getGlobalCoverageValue()))",
+          "source": "    gm(imgSource).fill('white').drawText(63, 10, ''+Math.ceil(this.getGlobalCoverageValue()))",
           "coverage": 0
         },
         "42": {
@@ -228,15 +228,15 @@
     "tests": 1,
     "passes": 1,
     "failures": 0,
-    "start": "2012-08-02T19:36:13.218Z",
-    "end": "2012-08-02T19:36:13.220Z",
+    "start": "2012-08-02T19:58:48.082Z",
+    "end": "2012-08-02T19:58:48.084Z",
     "duration": 2
   },
   "tests": [
     {
       "title": "test getGlobalCoverageValue",
       "fullTitle": "tellmecov test getGlobalCoverageValue",
-      "duration": 0
+      "duration": 1
     }
   ],
   "failures": [],
@@ -244,7 +244,7 @@
     {
       "title": "test getGlobalCoverageValue",
       "fullTitle": "tellmecov test getGlobalCoverageValue",
-      "duration": 0
+      "duration": 1
     }
   ]
 }
