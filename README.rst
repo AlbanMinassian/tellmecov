@@ -7,6 +7,8 @@
 tellmecov
 =========
 
+@TODO : utiliser `gh-badges <https://github.com/badges/gh-badges>`_ pour générer SVG du badge
+
 Tell me coverage rank. 
 
 Read ``coverage.json`` generate by `mocha <http://visionmedia.github.com/mocha/>`_ (JSONCov).
