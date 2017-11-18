@@ -11,7 +11,7 @@ tellmecov
 
 Tell me coverage rank. 
 
-Read ``coverage.json`` generate by `mocha <http://visionmedia.github.com/mocha/>`_ (JSONCov).
+Read ``coverage.json`` generate by `mocha <https://mochajs.org/>`_ (JSONCov).
 
 Install
 ---------------------------------------------------------
